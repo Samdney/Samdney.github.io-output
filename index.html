@@ -82,108 +82,11 @@
 
                         <aside id="featured" class="body">
                             <article>
-                                <h1 class="entry-title"><a href="/2018/04/primesapprox2.html">Primes matrix: Approximation 2</a></h1>
-                                <p><font size="1.9em"><i>Do 05 April 2018 by Samdney<br />
-                                Category: Math</i></font></p>
-                                <p>Since I wasn't happy about the final sum in my last post
-<a href="https://samdney.github.io/2018/03/primes-matrix-approximation.html">Primes matrix: Approximation</a>, I think about an alternative way.  </p>
-<p>We had 
-</p>
-<div class="math">$$
-    x_{\left(a,\dots,b\right),kj} = \lim_{m \rightarrow \infty} \left(\prod_{i=a}^{b} \exp\left(I 2\pi\frac{k-x_{i}}{2x_{i} + 1} \epsilon\left(m\right)\right)\right) \delta_{kj} \\
-    = \lim_{m \rightarrow \infty} \exp\left(\sum_{i = a}^{b} I2\pi\frac{k - x_{i}}{2x_{i} + 1}\epsilon\left(m\right)\right) \delta_{kj}
-$$</div>
-<p>in which we made the product over all <span class="math">\(\exp\)</span>-functions for each <span class="math">\(x_{i}\)</span>. Now,
-instead we will do the product over the arguments of the <span class="math">\(\exp\)</span>-functions</p>
-<div class="math">$$
-     x_{\left(a,\dots,b\right),kj} = = \lim_{m \rightarrow \infty} \exp\left(\prod_{i = a}^{b} I2\pi\frac{k - x_{i}}{2x_{i} + 1}\epsilon\left(m\right)\right) \delta_{kj}
-$$</div>
-<p>Let's look at the qualities of this product</p>
-<div class="math">$$
-    \prod_{i = a}^{b} \frac{k - x_{i}}{2x_{i} + 1}
-$$</div>
-<p>and under which conditions we receive integers. From my work
-<a href="https://github.com/Samdney/primescalc" target="_blank">https://github.com/Samdney/primescalc</a>
-we already know that we get troubles if at least one of the <span class="math">\(2x_{i} + 1\)</span> is
-a divisible number. Hence, we always asume that all our
-numbers <span class="math">\(2x_{i} + 1\)</span> are primes.</p>
-<p>We receive integer values in the following cases</p>
-<ul>
-<li>
-<p><strong>Case 1:</strong> For all <span class="math">\(k\)</span>-values which are also solutions for every single
-    <span class="math">\(\exp\)</span>-equation.</p>
-</li>
-<li>
-<p><strong>Case 2:</strong> For all <span class="math">\(k\)</span>-values which is a solution for at least one single
-    <span class="math">\(\exp\)</span>-equation and also leads to the trivial solution with
-    <span class="math">\(x_{\left(1\right),j} = N\left(2x_{\left(2\right),i} + 1\right)\)</span>, <span class="math">\(N \in \mathbb{N}\)</span>.</p>
-</li>
-</ul>
-<p>For the second case, we take the example of two equations with <span class="math">\(x_{1} = 2\)</span> and
-<span class="math">\(x_{2} = 3\)</span></p>
-<div class="math">$$
-    \frac{k - x_{1}}{2x_{1} + 1} \frac{k - x_{2}}{2x_{2} + 1} = \frac{\left(k - 2\right)\left(k - 3\right)}{5
-    \cdot 7}
-$$</div>
-<p>Here we receive one solution for <span class="math">\(k = 37\)</span>, <span class="math">\(\frac{35 \cdot 34}{35} = 34\)</span>, which is also a solution for
-<span class="math">\(\frac{37 - 2}{5} = 7\)</span> and an other solution for <span class="math">\(k = 38\)</span>, <span class="math">\(\frac{36 \cdot
-35}{35} = 36\)</span> which is also a solution for <span class="math">\(\frac{38 - 3}{7} = 5\)</span>. We see that
-<span class="math">\(k\)</span> leads to the trivial case in which <span class="math">\(x_{j}\)</span> of one single <span class="math">\(\exp\)</span>-equation is equal to the prime value of an other single <span class="math">\(\exp\)</span>-equation or the product of primes of several single <span class="math">\(\exp\)</span>-equations.</p>
-<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width < 768) ? "left" : align;
-        indent = (screen.width < 768) ? "0em" : indent;
-        linebreak = (screen.width < 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-</script>
+                                <h1 class="entry-title"><a href="/2018/06/somenotes.html">Some notes</a></h1>
+                                <p><font size="1.9em"><i>Di 19 Juni 2018 by Samdney<br />
+                                Category: Philosophy</i></font></p>
+                                <p>Sometimes I wish that I would live in the Stone Age. In a world without any stupid borders which divide humans in groups and countries which are the result of wars, destruction and the dead of millions of people.</p>
+<p>Nationalism is to be proud to be the descendant of people who start wars for religious reason or since they wanted a part of area. They destroyed homes &amp; killed people. And now, today, you are the lucky guy who was born on the right side of this bloody border line(?)</p>
                             </article>
                         </aside><!-- /#featured -->
 
@@ -191,6 +94,9 @@ $$</div>
             <hr style="border:dotted #000000 1px;"/>
             <h2><a href="/index.html">Last Posts </a></h2>
             <dl class="dl-horizontal">
+                <dt>Di 19 Juni 2018</dt>
+                <dd><a href="/2018/06/somenotes.html">Some notes</a></dd>
+                <dd><p>Sometimes I wish that I would live in the Stone Age. In a world without …</p></dd>
                 <dt>Do 05 April 2018</dt>
                 <dd><a href="/2018/04/primesapprox2.html">Primes matrix: Approximation 2</a></dd>
                 <dd><p>Since I wasn't happy about the final sum in my last post
@@ -198,10 +104,6 @@ $$</div>
                 <dt>Sa 31 März 2018</dt>
                 <dd><a href="/2018/03/primes-matrix-approximation.html">Primes matrix: Approximation</a></dd>
                 <dd><p>Last week, I wrote in <a href="https://samdney.github.io/2018/03/primes-matrix.html">Primes matrix</a> about a possibility to represent primes. The negative …</p></dd>
-                <dt>Fr 23 März 2018</dt>
-                <dd><a href="/2018/03/primes-matrix.html">Primes matrix</a></dd>
-                <dd><p>Some time ago, I already wrote about representation ideas of primes and we saw
-that …</p></dd>
             </dl>
             <hr style="border:dotted #000000 1px;"/>
         </div>
