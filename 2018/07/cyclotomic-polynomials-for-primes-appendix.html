@@ -4,10 +4,10 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="keywords" content="">
+        <meta name="keywords" content="cyclotomic polynomials, number theory, primes">
         <link rel="icon" href="/favicon.ico">
 
-        <title>Tag archives primes - Samdney's Blog</title>
+        <title>Cyclotomic polynomials for primes: Appendix - Samdney's Blog</title>
 
 	<!-- Awesome font -->
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
@@ -36,7 +36,9 @@
     <body>
 
         <!-- Header -->
-    <div class="header-container" style="background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/images/AfterThe_digital_War_Samdney_lowerQuality.jpg'); background-position: center; ">
+    <!-- <div class="header-container" style="background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/images/'); background-position:
+        center; "> -->
+        <div class="header-container" style="background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/images/AfterThe_digital_War_Samdney_lowerQuality.jpg'); background-position: center; ">
 
             <!-- Static navbar -->
             <div class="container">
@@ -58,17 +60,23 @@
             <!-- /Static navbar -->
 
             <!-- Header -->
+    <!-- Header -->
     <div class="container header-wrapper">
         <div class="row">
               <div class="col-lg-12">
                   <div class="header-content">
-                      <h1 class="header-title text-uppercase">Tag : #primes</h1>
+                      <h1 class="header-title">Cyclotomic polynomials for primes: Appendix</h1>
+                      <p class="header-date">By <a href="/author/samdney.html">Samdney</a>, Mo 30 Juli 2018, in category <a href="/category/math.html">Math</a></p>
                       <div class="header-underline"></div>
-                      <p class="header-subtitle header-subtitle-homepage">Tag archives #primes</p>
+                      <div class="clearfix"></div>
+                      <p class="pull-right header-tags">
+                          <span class="glyphicon glyphicon-tags mr5" aria-hidden="true"></span>
+<a href="/tag/cyclotomic-polynomials.html">cyclotomic polynomials</a>, <a href="/tag/number-theory.html">number theory</a>, <a href="/tag/primes.html">primes</a>                      </p>
                   </div>
               </div>
         </div>
     </div>
+    <!-- /Header -->
             <!-- /Header -->
 
         </div>
@@ -76,30 +84,89 @@
 
 
         <!-- Content -->
-    <div class="archive-container">
-        <div class="container content archive">
-            <h2><a href="/tag/primes.html">primes</a></h2>
-            <dl class="dl-horizontal">
-            	<dt>Mo 30 Juli 2018</dt>
-            	<dd><a href="/2018/07/cyclotomic-polynomials-for-primes-appendix.html">Cyclotomic polynomials for primes: Appendix</a></dd>
-            	<dt>Mi 18 Juli 2018</dt>
-            	<dd><a href="/2018/07/cyclotomic-polynomials-for-primes.html">Cyclotomic polynomials for primes</a></dd>
-            	<dt>Do 05 April 2018</dt>
-            	<dd><a href="/2018/04/primesapprox2.html">Primes matrix: Approximation 2</a></dd>
-            	<dt>Sa 31 März 2018</dt>
-            	<dd><a href="/2018/03/primes-matrix-approximation.html">Primes matrix: Approximation</a></dd>
-            	<dt>Fr 23 März 2018</dt>
-            	<dd><a href="/2018/03/primes-matrix.html">Primes matrix</a></dd>
-            	<dt>Sa 13 Januar 2018</dt>
-            	<dd><a href="/2018/01/lets-calculate-primes-part-iii-intersection-of-times-tables-sum-formula.html">Let`s calculate primes! Part III - Intersection of times tables: sum formula</a></dd>
-            	<dt>Fr 29 Dezember 2017</dt>
-            	<dd><a href="/2017/12/lets-calculate-primes-part-ii-intersection-of-times-tables.html">Let`s calculate primes! Part II - Intersection of times tables</a></dd>
-            	<dt>Fr 29 Dezember 2017</dt>
-            	<dd><a href="/2017/12/lets-calculate-primes-part-i-representation-of-times-tables.html">Let`s calculate primes! Part I - Representation of times tables</a></dd>
-            	<dt>Mo 11 Dezember 2017</dt>
-            	<dd><a href="/2017/12/beautiful-primes.html">Beautiful primes!</a></dd>
-            </dl>
-        </div>
+    <div class="container content">
+        <p>Ok, last time, we had</p>
+<div class="math">\begin{alignat}{3}
+    \phi_{p}\left(x\right) &amp;= \sum_{k = 0}^{p-1} x^{k} \notag \\
+    &amp;= \sum_{k = 0}^{p-1} e^{k\ln\left(x\right)} \notag \\
+    &amp;= e^{0\ln\left(x\right)} + \sum_{k = 1}^{p-1} e^{k\ln\left(x\right)}
+    \notag \\
+    &amp;= 1 + \frac{e^{\ln\left(x\right)} \left(e^{\left(p-1\right)\ln\left(x\right)} - 1\right)}{e^{\ln\left(x\right)} - 1}
+\end{alignat}</div>
+<p>. All what I want to add in this small appendix is, that we can, of course,
+also write here</p>
+<div class="math">\begin{alignat}{3}
+    \phi_{p}\left(x\right) &amp;= 1 + \frac{e^{\ln\left(x\right)} \left(e^{\left(p-1\right)\ln\left(x\right)} - 1\right)}{e^{\ln\left(x\right)} - 1} \notag \\
+    &amp;= 1 + \frac{x\left(x^{p-1} - 1\right)}{x - 1} \\
+        &amp;= 1 + \frac{x^{p} - x}{x - 1} \notag
+\end{alignat}</div>
+<p>Now, if we solve this for p</p>
+<div class="math">\begin{alignat}{3}
+    \phi_{p}\left(x\right) &amp;= 1 + \frac{x^{p} - x}{x - 1} \notag \\
+    \phi_{p}\left(x\right) - 1 &amp;= \frac{x^{p} - x}{x - 1} \notag \\
+    \left(\phi_{p}\left(x\right) - 1\right)\left(x - 1\right) &amp;= x^{p} - x \notag \\
+    \left(\phi_{p}\left(x\right) - 1\right)\left(x - 1\right) + x &amp;= x^{p} \notag \\
+    p &amp;= \ln\left(\frac{\left(\phi_{p}\left(x\right) - 1\right)\left(x - 1\right) + x}{x}\right).
+\end{alignat}</div>
+<p>That's it.</p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+
+
+        
     </div>
         <!-- /Content --> 
 

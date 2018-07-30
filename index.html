@@ -83,30 +83,10 @@
 
                         <aside id="featured" class="body">
                             <article>
-                                <h1 class="entry-title"><a href="/2018/07/cyclotomic-polynomials-for-primes.html">Cyclotomic polynomials for primes</a></h1>
-                                <p><font size="1.9em"><i>Mi 18 Juli 2018 by Samdney<br />
+                                <h1 class="entry-title"><a href="/2018/07/cyclotomic-polynomials-for-primes-appendix.html">Cyclotomic polynomials for primes: Appendix</a></h1>
+                                <p><font size="1.9em"><i>Mo 30 Juli 2018 by Samdney<br />
                                 Category: Math</i></font></p>
-                                <p>Currently, I'm spending my time with cyclotomic polynomials. So, I don't want to
-miss the possibility also to mention a small note about the connection of this
-polynomials to the set of prime numbers.  </p>
-<p>At first, we have a cyclotomic polynomial in the following way</p>
-<div class="math">\begin{equation}
-    \phi_{n}\left(x\right) = \prod_{\substack{1 \leq g \leq n \\ ggT\left(g,n\right) = 1}}
-    \left(x - e^{\frac{2\pi i g}{n}}\right)
-\end{equation}</div>
-<p>with <span class="math">\(n, g \in \mathbb{N}\)</span>, respectively</p>
-<div class="math">\begin{alignat}{3}
-    x^{n} - 1 &amp;= \prod_{1 \leq g \leq n} \left(x - e^{\frac{2\pi i g}{n}}\right) \notag \\
-    &amp;= \prod_{d | n} \prod_{\substack{1 \leq g \leq n \\ ggT\left(g,n\right) = d}} \left(x - e^{\frac{2\pi i g}{n}}\right) \notag \\
-    &amp;= \prod_{d | n} \phi_{n/d}\left(x\right) \notag \\
-    &amp;= \prod_{d | n} \phi_{d}\left(x\right)
-\end{alignat}</div>
-<p>. In the case of pime numbers <span class="math">\(p \in \mathbb{P}\)</span>, we also have </p>
-<div class="math">\begin{equation}
-    \phi_{p}\left(x\right) = 1 + x + x^{2} + \dots + x^{p-1} = \sum_{k =
-    0}^{p-1} x^{k}
-\end{equation}</div>
-<p>. From this follows the first rewriting</p>
+                                <p>Ok, last time, we had</p>
 <div class="math">\begin{alignat}{3}
     \phi_{p}\left(x\right) &amp;= \sum_{k = 0}^{p-1} x^{k} \notag \\
     &amp;= \sum_{k = 0}^{p-1} e^{k\ln\left(x\right)} \notag \\
@@ -114,30 +94,22 @@ polynomials to the set of prime numbers.  </p>
     \notag \\
     &amp;= 1 + \frac{e^{\ln\left(x\right)} \left(e^{\left(p-1\right)\ln\left(x\right)} - 1\right)}{e^{\ln\left(x\right)} - 1}
 \end{alignat}</div>
-<p>, since </p>
-<div class="math">$$
-    \sum_{k = 1}^{n} e^{kA} = \frac{e^{A}\left(e^{An} - 1\right)}{e^{A} - 1}
-$$</div>
-<p>. Now we will solve this equation for <span class="math">\(p\)</span>.</p>
+<p>. All what I want to add in this small appendix is, that we can, of course,
+also write here</p>
 <div class="math">\begin{alignat}{3}
     \phi_{p}\left(x\right) &amp;= 1 + \frac{e^{\ln\left(x\right)} \left(e^{\left(p-1\right)\ln\left(x\right)} - 1\right)}{e^{\ln\left(x\right)} - 1} \notag \\
-    \left(\phi_{p}\left(x\right) - 1\right)\left(e^{\ln\left(x\right)} - 1\right) &amp;=
-    e^{\ln\left(x\right)}\left(e^{\left(p-1\right)\ln\left(x\right)} - 1\right)
-    \notag \\
-    \frac{\left(\phi_{p}\left(x\right) - 1\right)\left(e^{e^{\ln\left(x\right)}} - 1\right)}{e^{\ln\left(x\right)}} + 1 &amp;= e^{\left(p-1\right)\ln\left(x\right)} \notag \\
-    \left(p-1\right)\ln\left(x\right) &amp;= \ln\left(\frac{\left(\phi_{p}\left(x\right) - 1\right)\left(e^{\ln\left(x\right)} - 1\right)}{e^{\ln\left(x\right)}} + 1\right) \notag \\
-    \left(p-1\right)\ln\left(x\right) &amp;= \ln\left(\frac{\left(\phi_{p}\left(x\right) - 1\right)\left(x - 1\right) + x}{x}\right) \notag \\
-    \ln\left(x\right)\left(\left(p-1\right) + 1\right) &amp;=
-    \ln\left(\left(\phi_{p}\left(x\right) - 1\right)\left(x - 1\right) + x\right) \notag \\
-    p &amp;= \ln\left(\frac{\left(\phi_{p}\left(x\right) - 1\right)\left(x - 1\right) + x}{x}\right)
+    &amp;= 1 + \frac{x\left(x^{p-1} - 1\right)}{x - 1} \\
+        &amp;= 1 + \frac{x^{p} - x}{x - 1} \notag
 \end{alignat}</div>
-<p>Additionally, we have our second, very easy to see, connection for prime numbers</p>
+<p>Now, if we solve this for p</p>
 <div class="math">\begin{alignat}{3}
-    \phi_{p}\left(x\right) &amp;= x^{p} - 1 \notag \\
-    &amp;= \sum_{k' = 0}^{p} x^{k'} - \sum_{k'' = 0}^{p-1} x^{k''} - 1 \notag \\
-    &amp;= \phi_{p+1}\left(x\right) - \phi_{p}\left(x\right) - 1
+    \phi_{p}\left(x\right) &amp;= 1 + \frac{x^{p} - x}{x - 1} \notag \\
+    \phi_{p}\left(x\right) - 1 &amp;= \frac{x^{p} - x}{x - 1} \notag \\
+    \left(\phi_{p}\left(x\right) - 1\right)\left(x - 1\right) &amp;= x^{p} - x \notag \\
+    \left(\phi_{p}\left(x\right) - 1\right)\left(x - 1\right) + x &amp;= x^{p} \notag \\
+    p &amp;= \ln\left(\frac{\left(\phi_{p}\left(x\right) - 1\right)\left(x - 1\right) + x}{x}\right).
 \end{alignat}</div>
-<p>. I have no idea for which this can be useful, but I think it is nice to know :P.</p>
+<p>That's it.</p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",
@@ -200,6 +172,11 @@ $$</div>
             <hr style="border:dotted #000000 1px;"/>
             <h2><a href="/index.html">Last Posts </a></h2>
             <dl class="dl-horizontal">
+                <dt>Mo 30 Juli 2018</dt>
+                <dd><a href="/2018/07/cyclotomic-polynomials-for-primes-appendix.html">Cyclotomic polynomials for primes: Appendix</a></dd>
+                <dd><p>Ok, last time, we had</p>
+<div class="math">\begin{alignat}{3}
+    \phi_{p}\left(x\right) &amp;= \sum_{k …</div></dd>
                 <dt>Mi 18 Juli 2018</dt>
                 <dd><a href="/2018/07/cyclotomic-polynomials-for-primes.html">Cyclotomic polynomials for primes</a></dd>
                 <dd><p>Currently, I'm spending my time with cyclotomic polynomials. So, I don't want to
@@ -207,10 +184,6 @@ miss the …</p></dd>
                 <dt>Di 19 Juni 2018</dt>
                 <dd><a href="/2018/06/somenotes.html">Some notes</a></dd>
                 <dd><p>Sometimes I wish that I would live in the Stone Age. In a world without …</p></dd>
-                <dt>Do 05 April 2018</dt>
-                <dd><a href="/2018/04/primesapprox2.html">Primes matrix: Approximation 2</a></dd>
-                <dd><p>Since I wasn't happy about the final sum in my last post
-<a href="https://samdney.github.io/2018/03/primes-matrix-approximation.html">Primes matrix: Approximation …</a></p></dd>
             </dl>
             <hr style="border:dotted #000000 1px;"/>
         </div>
