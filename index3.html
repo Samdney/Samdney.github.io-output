@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en_us">
     <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -44,6 +44,57 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
+	<!-- MathJaX -->
+
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			config: ['MMLorHTML.js'],
+			loader: {
+				load: ['input/tex-base', '[tex]/ams', 'output/svg', 'ui/menu', '[tex]/require']
+			},
+			TeX: {
+				packages: ['base', 'require', 'ams'],
+				extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'],
+				equationNumbers: { autoNumber: 'AMS' }
+			},
+			//packages: ['base', 'require', 'ams'],
+			//extensions: ['tex2jax.js', 'AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'],
+			//equationNumbers: { autoNumber: 'AMS' },
+			tags: 'ams',
+    		tagSide: 'right',
+			jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+			//extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js'],
+			extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js'],
+			//displayAlign: 'align',
+			//displayIndent: 'indent',
+			showMathMenu: true,
+			messageStyle: 'normal',
+			tex2jax: {
+				inlineMath: [ ['$','$'], ['\\\\(','\\\\)'] ],
+				displayMath: [ ['$$','$$'] ],
+				processEscapes: true
+				,
+				preview: 'TeX'
+			},
+			//tex: {
+			//	processEscapes: false
+			//}
+			'HTML-CSS': {
+				styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'}},
+				linebreaks: { automatic: "linebreak", width: '90% container' },
+			}
+		});
+	</script>
+	
+	<script type="text/javascript">
+  	MathJax.Hub.Configured()
+	</script>
+
+
+	<script type="text/javascript"
+	   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js">
+	</script>
 
     </head>
 
@@ -106,21 +157,21 @@
             <hr style="border:dotted #000000 1px;"/>
             <h2><a href="/index3.html">Last Posts <small>- page 3</small></a></h2>
             <dl class="dl-horizontal">
-                        <dt>Sat, 31 Mar 2018</dt>
+                        <dt>Sat 31 March 2018</dt>
                         <dd><a href="/2018/03/primes-matrix-approximation.html">Primes matrix: Approximation</a></dd>
-                        <dd><p>Last week, I wrote about a possibility to represent primes. The negative part of ...</p></dd>
-                        <dt>Fri, 23 Mar 2018</dt>
+                        <dd>Last week, I wrote about a possibility to represent primes. The negative part of ...</dd>
+                        <dt>Fri 23 March 2018</dt>
                         <dd><a href="/2018/03/primes-matrix.html">Primes matrix</a></dd>
-                        <dd><p>Some time ago, I already wrote about representation ideas of primes ...</p></dd>
-                        <dt>Sat, 13 Jan 2018</dt>
+                        <dd>Some time ago, I already wrote about representation ideas of primes ...</dd>
+                        <dt>Sat 13 January 2018</dt>
                         <dd><a href="/2018/01/catch-arxiv-papers.html">Catch arXiv papers</a></dd>
-                        <dd><p>Get your favorite papers from arXiv.</p></dd>
-                        <dt>Sat, 13 Jan 2018</dt>
+                        <dd>Get your favorite papers from arXiv.</dd>
+                        <dt>Sat 13 January 2018</dt>
                         <dd><a href="/2018/01/lets-calculate-primes-part-iii-intersection-of-times-tables-sum-formula.html">Let`s calculate primes! Part III - Intersection of times tables: sum formula</a></dd>
-                        <dd><p>Describtion of prime numbers part 3.</p></dd>
-                        <dt>Fri, 29 Dec 2017</dt>
+                        <dd>Describtion of prime numbers part 3.</dd>
+                        <dt>Fri 29 December 2017</dt>
                         <dd><a href="/2017/12/lets-calculate-primes-part-ii-intersection-of-times-tables.html">Let`s calculate primes! Part II - Intersection of times tables</a></dd>
-                        <dd><p>Describtion of prime numbers part 2.</p></dd>
+                        <dd>Describtion of prime numbers part 2.</dd>
             </dl>
             <hr style="border:dotted #000000 1px;"/>
                     <a href="/tag/algorithm.html">#algorithm</a>

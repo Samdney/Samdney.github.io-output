@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en_us">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -44,6 +44,57 @@
         <![endif]-->
 
 
+
+		<!-- MathJaX -->
+
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			config: ['MMLorHTML.js'],
+			loader: {
+				load: ['input/tex-base', '[tex]/ams', 'output/svg', 'ui/menu', '[tex]/require']
+			},
+			TeX: {
+				packages: ['base', 'require', 'ams'],
+				extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'],
+				equationNumbers: { autoNumber: 'AMS' }
+			},
+			//packages: ['base', 'require', 'ams'],
+			//extensions: ['tex2jax.js', 'AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'],
+			//equationNumbers: { autoNumber: 'AMS' },
+			tags: 'ams',
+    		tagSide: 'right',
+			jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+			//extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js'],
+			extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js'],
+			//displayAlign: 'align',
+			//displayIndent: 'indent',
+			showMathMenu: true,
+			messageStyle: 'normal',
+			tex2jax: {
+				inlineMath: [ ['$','$'], ['\\\\(','\\\\)'] ],
+				displayMath: [ ['$$','$$'] ],
+				processEscapes: true
+				,
+				preview: 'TeX'
+			},
+			//tex: {
+			//	processEscapes: false
+			//}
+			'HTML-CSS': {
+				styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'}},
+				linebreaks: { automatic: "linebreak", width: '90% container' },
+			}
+		});
+	</script>
+	
+	<script type="text/javascript">
+  	MathJax.Hub.Configured()
+	</script>
+
+
+	<script type="text/javascript"
+	   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js">
+	</script>
 
     </head>
 
@@ -99,41 +150,41 @@
         <div class="container content archive">
             <h2><a href="/archives.html">Archives</a></h2>
             <dl class="dl-horizontal">
-            	<dt>Wed, 01 Jun 2022</dt>
+            	<dt>Wed 01 June 2022</dt>
             	<dd><a href="/2022/06/powers-of-2-and-k-digits-structures.html">Powers of 2 and k-digits structures</a></dd>
-            	<dt>Thu, 28 Oct 2021</dt>
+            	<dt>Thu 28 October 2021</dt>
             	<dd><a href="/2021/10/patent-applications-link-list.html">Patent applications: Link list</a></dd>
-            	<dt>Fri, 12 Jun 2020</dt>
+            	<dt>Fri 12 June 2020</dt>
             	<dd><a href="/2020/06/adhocindependentsets-euleriancycles.html">Eulerian cycles for combinatorial independent sets determination</a></dd>
-            	<dt>Sun, 07 Jun 2020</dt>
+            	<dt>Sun 07 June 2020</dt>
             	<dd><a href="/2020/06/mfdn-protocol-basicconditions.html">Basic conditions for a mathematical forced decentralized network protocol (MfDN-Protocol)</a></dd>
-            	<dt>Wed, 20 May 2020</dt>
+            	<dt>Wed 20 May 2020</dt>
             	<dd><a href="/2020/05/adhocindependentsets.html">Ad hoc method for independent sets</a></dd>
-            	<dt>Thu, 24 Oct 2019</dt>
+            	<dt>Thu 24 October 2019</dt>
             	<dd><a href="/2019/10/status-report-01.html">Status report #1: Getting ordered, collecting money</a></dd>
-            	<dt>Mon, 30 Jul 2018</dt>
+            	<dt>Mon 30 July 2018</dt>
             	<dd><a href="/2018/07/cyclotomic-polynomials-for-primes-appendix.html">Cyclotomic polynomials for primes: Appendix</a></dd>
-            	<dt>Wed, 18 Jul 2018</dt>
+            	<dt>Wed 18 July 2018</dt>
             	<dd><a href="/2018/07/cyclotomic-polynomials-for-primes.html">Cyclotomic polynomials for primes</a></dd>
-            	<dt>Tue, 19 Jun 2018</dt>
+            	<dt>Tue 19 June 2018</dt>
             	<dd><a href="/2018/06/somenotes.html">Some notes</a></dd>
-            	<dt>Thu, 05 Apr 2018</dt>
+            	<dt>Thu 05 April 2018</dt>
             	<dd><a href="/2018/04/primesapprox2.html">Primes matrix: Approximation 2</a></dd>
-            	<dt>Sat, 31 Mar 2018</dt>
+            	<dt>Sat 31 March 2018</dt>
             	<dd><a href="/2018/03/primes-matrix-approximation.html">Primes matrix: Approximation</a></dd>
-            	<dt>Fri, 23 Mar 2018</dt>
+            	<dt>Fri 23 March 2018</dt>
             	<dd><a href="/2018/03/primes-matrix.html">Primes matrix</a></dd>
-            	<dt>Sat, 13 Jan 2018</dt>
+            	<dt>Sat 13 January 2018</dt>
             	<dd><a href="/2018/01/catch-arxiv-papers.html">Catch arXiv papers</a></dd>
-            	<dt>Sat, 13 Jan 2018</dt>
+            	<dt>Sat 13 January 2018</dt>
             	<dd><a href="/2018/01/lets-calculate-primes-part-iii-intersection-of-times-tables-sum-formula.html">Let`s calculate primes! Part III - Intersection of times tables: sum formula</a></dd>
-            	<dt>Fri, 29 Dec 2017</dt>
+            	<dt>Fri 29 December 2017</dt>
             	<dd><a href="/2017/12/lets-calculate-primes-part-ii-intersection-of-times-tables.html">Let`s calculate primes! Part II - Intersection of times tables</a></dd>
-            	<dt>Fri, 29 Dec 2017</dt>
+            	<dt>Fri 29 December 2017</dt>
             	<dd><a href="/2017/12/lets-calculate-primes-part-i-representation-of-times-tables.html">Let`s calculate primes! Part I - Representation of times tables</a></dd>
-            	<dt>Mon, 11 Dec 2017</dt>
+            	<dt>Mon 11 December 2017</dt>
             	<dd><a href="/2017/12/beautiful-primes.html">Beautiful primes!</a></dd>
-            	<dt>Sun, 26 Nov 2017</dt>
+            	<dt>Sun 26 November 2017</dt>
             	<dd><a href="/2017/11/hello-world.html">Hello World</a></dd>
             </dl>
         </div>

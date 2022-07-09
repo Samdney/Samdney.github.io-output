@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en_us">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,7 +36,7 @@
         <meta name="twitter:site" content="@SamdneyTweet" />
         <meta name="twitter:creator" content="@SamdneyTweet" />
         <meta name="twitter:title" content="Powers of 2 and k-digits structures" />
-        <meta name="twitter:description" content="<p>Powers of 2 and some of their k-digit structures.</p>" />
+        <meta name="twitter:description" content="Powers of 2 and some of their k-digit structures." />
         <meta name="twitter:image" content="https://blog.carolin-zoebelein.de/images/twittercard.jpg" />
 
         <!-- RSS Feeds -->
@@ -49,6 +49,57 @@
         <![endif]-->
 
 
+
+		<!-- MathJaX -->
+
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			config: ['MMLorHTML.js'],
+			loader: {
+				load: ['input/tex-base', '[tex]/ams', 'output/svg', 'ui/menu', '[tex]/require']
+			},
+			TeX: {
+				packages: ['base', 'require', 'ams'],
+				extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'],
+				equationNumbers: { autoNumber: 'AMS' }
+			},
+			//packages: ['base', 'require', 'ams'],
+			//extensions: ['tex2jax.js', 'AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'],
+			//equationNumbers: { autoNumber: 'AMS' },
+			tags: 'ams',
+    		tagSide: 'right',
+			jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+			//extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js'],
+			extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js'],
+			//displayAlign: 'align',
+			//displayIndent: 'indent',
+			showMathMenu: true,
+			messageStyle: 'normal',
+			tex2jax: {
+				inlineMath: [ ['$','$'], ['\\\\(','\\\\)'] ],
+				displayMath: [ ['$$','$$'] ],
+				processEscapes: true
+				,
+				preview: 'TeX'
+			},
+			//tex: {
+			//	processEscapes: false
+			//}
+			'HTML-CSS': {
+				styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'}},
+				linebreaks: { automatic: "linebreak", width: '90% container' },
+			}
+		});
+	</script>
+	
+	<script type="text/javascript">
+  	MathJax.Hub.Configured()
+	</script>
+
+
+	<script type="text/javascript"
+	   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js">
+	</script>
 
     </head>
 
@@ -101,7 +152,7 @@
               <div class="col-lg-12">
                   <div class="header-content">
                       <h1 class="header-title">Powers of 2 and k-digits structures</h1>
-                      <p class="header-date">By <a href="/author/carolin-zobelein.html">Carolin Zöbelein</a>, Wed, 01 Jun 2022, in category <a href="/category/math.html">Math</a></p>
+                      <p class="header-date">By <a href="/author/carolin-zobelein.html">Carolin Zöbelein</a>, Wed 01 June 2022, in category <a href="/category/math.html">Math</a></p>
                       <div class="header-underline"></div>
                       <div class="clearfix"></div>
                       <p class="pull-right header-tags">
@@ -123,7 +174,7 @@
     <div class="container content">
 
 	<h1 class="entry-title"><a href="/2022/06/powers-of-2-and-k-digits-structures.html">Powers of 2 and k-digits structures</a></h1>
-        <p><font size="2.3em"><i>Wed, 01 Jun 2022 by Carolin Zöbelein<br />
+        <p><font size="2.3em"><i>Wed 01 June 2022 by Carolin Zöbelein<br />
         Category: Math<br />
 
 	Tags: <a href="/tag/number-theory.html">number theory</a>, <a href="/tag/powers-of-2.html">powers of 2</a>	
@@ -132,80 +183,26 @@
 	</p>
 
 
-        <p>In my paper <i>Powers of <span class="math">\(2\)</span> whose digits are powers of <span class="math">\(2\)</span></i> (see also <a href="https://research.carolin-zoebelein.de/public.html#bib6" title="External: Research website" target="_blank">https://research.carolin-zoebelein.de/public.html#bib6</a>), I'm discussing digits of powers of 2, and which conditions are necessary to get for them powers of 2, too.</p>
-<p>Given be the set of powers of <span class="math">\(2\)</span> by <span class="math">\(P_{y} = 2^{y}\)</span>, <span class="math">\(y \in \mathbb{N}_{0}\)</span>. It is unknown if, apart from <span class="math">\(P_{y=0} = 2^{0} = 1\)</span>, <span class="math">\(P_{y=1} = 2^{1} = 2\)</span>, <span class="math">\(P_{y=2} = 2^{2} = 4\)</span>, <span class="math">\(P_{y=3} = 2^{3} = 8\)</span> and <span class="math">\(P_{y=7} = 2^{7} = 128\)</span>, there exist more <span class="math">\(P_{y}\)</span>'s whose digits are powers of <span class="math">\(2\)</span> (<i>A130693</i> in the On-line Encyclopedia of Integer Sequences (OEIS) <a href="http://oeis.org/A130693" title="External: On-line Encyclopedia of Integer Sequences (OEIS)" target="_blank">http://oeis.org/A130693</a> [Dre07]) [Wel97], too.</p>
-<p>Looking at the set of powers of <span class="math">\(2\)</span>'s [Slo], we know that a <span class="math">\(m\)</span>-digit power of <span class="math">\(2\)</span> by <span class="math">\(P_{y}\)</span>, has a periodicity of <span class="math">\(\varphi\left(5^{k}\right) = 4 \cdot 5^{k-1}\)</span> for the last <span class="math">\(k \leq m\)</span> digits, starting at <span class="math">\(2^{k}\)</span> [YY64]. Taking the known periodicity of the last <span class="math">\(k\)</span>-digits into account, we want to discuss properties for the last <span class="math">\(k^{\prime} &gt; k\)</span> digits, for fixed last <span class="math">\(k\)</span>-digits of <span class="math">\(P_{y}\)</span>.</p>
-<p><b>Notation.</b> If we write <span class="math">\(2^{y}_{k}\)</span>, we are talking about the <span class="math">\(k\)</span>'th digit (counted from right to left, starting counting by <span class="math">\(1\)</span>) of <span class="math">\(2^{y}\)</span>, in base <span class="math">\(10\)</span> representation. For step sizes we write <span class="math">\(d^{k + 1}_{y,k}\)</span>, meaning the step size of the <span class="math">\(k + 1\)</span>-digit, starting by <span class="math">\(2^{y}\)</span>, with a <span class="math">\(k\)</span>-digit periodicity. Furthermore, we will denote the set of all one-digit powers of <span class="math">\(2\)</span> by <span class="math">\(\mathcal{P}_{2} := \{ 1, 2, 4, 8 \}\)</span>.</p>
-<p>For this, at first, we also considered <span class="math">\(k\)</span>-digit structures of powers of <span class="math">\(2\)</span> in generally, and used the following two lemmas as starting point for our proofs in the mentioned paper.</p>
-<p><br /></p>
-<p><b>Lemma 2.1</b> (<span class="math">\(k\)</span>-digits structure). <i>Let be <span class="math">\(P_{y} = 2^{y}\)</span>, <span class="math">\(y \in \mathbb{N}_{0}\)</span>, and the last <span class="math">\(k^{\star}\)</span>-digits periodical with <span class="math">\(\varphi\left(5^{k^{\star}}\right) = 4 \cdot 5^{k^{\star} - 1}\)</span>, for all <span class="math">\(2^{y} \geq 2^{k^{\star}}\)</span>, <span class="math">\(k^{\star} \geq 2\)</span>. Then for <span class="math">\(2^{k + k^{\star} + \varphi\left(5^{k}\right)}\)</span>, <span class="math">\(k \in \left[ k^{\star}, k^{\star} + \varphi\left(5^{k^{\star} - 1}\right) - 1 \right]\)</span>, the last <span class="math">\(k\)</span>-digits are given by <span class="math">\(2^{1 + k^{\star} + \varphi\left(5^{1}\right)}_{1} \cdot 2^{k - 1}\)</span>, with <span class="math">\(k - x \approx \left(1 - \log_{10}\left(2\right)\right)k - k^{\star}\log_{10}\left(2\right)\)</span> leading zeros for <span class="math">\(k \geq 2\)</span>, and at least one leading zero for <span class="math">\(k \geq 3\)</span>.</i></p>
-<p><i>Proof.</i> We know, that for the last <span class="math">\(k\)</span>-digits <span class="math">\(2^{k + k^{\star} + \varphi\left(5^{k}\right)} \sim 2^{k + k^{\star}}\)</span>, which have <span class="math">\(x \approx \left(k + k^{\star}\right) \log_{10}\left(2\right)\)</span> digits. Since, we also have the periodicity <span class="math">\(\varphi\left(5^{k}\right)\)</span>, we directly get <span class="math">\(k - x \approx \left(1 - \log_{10}\left(2\right)\right)k - k^{\star}\log_{10}\left(2\right)\)</span> for the number of leading zeros. Looking at <span class="math">\(0 \leq k - x\)</span>, we receive <span class="math">\(k \gtrsim k^{\star} \frac{\log_{10}\left(2\right)}{1 - \log_{10}\left(2\right)}\)</span>, and hence <span class="math">\(k \geq 2\)</span> by the constraint <span class="math">\(k^{\star} \geq 2\)</span>, and for <span class="math">\(1 \geq k - x\)</span>, with <span class="math">\(k = k^{\star}\)</span>, we recive <span class="math">\(k \gtrsim \frac{1}{1 - 2\log_{10}\left(2\right)}\)</span>, and hence <span class="math">\(k \geq 3\)</span>. Finally it is easy to see, that the statement is always satisfied for <span class="math">\(k \geq k^{\star}\)</span>, because of <span class="math">\(k^{\star} \gtrsim k^{\star} \frac{\log_{10}\left(2\right)}{1 - \log_{10}\left(2\right)} \approx 0.4k^{\star}\)</span> for <span class="math">\(k = k^{*}\)</span>.</p>
-<p><br /></p>
-<p><b>Lemma 2.2</b> (<span class="math">\(k^{\star}\)</span>-digits fixed structure). <i> Let be <span class="math">\(P_{y} = 2^{y}\)</span>, <span class="math">\(y \in \mathbb{N}_{0}\)</span>, and the last <span class="math">\(k^{\star}\)</span>-digits periodical with <span class="math">\(\varphi\left(5^{k^{\star}}\right) = 4 \cdot 5^{k^{\star} - 1}\)</span>, for all <span class="math">\(2^{y} \geq 2^{k^{\star}}\)</span>, <span class="math">\(k^{\star} \geq 2\)</span>. Then for <span class="math">\(2^{k + k^{\star} + \varphi\left(5^{k}\right)}\)</span>, <span class="math">\(k \in \left[ k^{\star}, k^{\star} + \varphi\left(5^{k^{\star} - 1}\right) - 1 \right]\)</span>, the last <span class="math">\(k + 1\)</span> to <span class="math">\(k + \delta k\)</span>-digits are fixed for at least <span class="math">\(\delta k = k^{\star}\)</span> digits. </i></p>
+        <p>In my paper <i>Powers of $2$ whose digits are powers of $2$</i> (see also <a href="https://research.carolin-zoebelein.de/public.html#bib6" title="External: Research website" target="_blank">https://research.carolin-zoebelein.de/public.html#bib6</a>), I'm discussing digits of powers of 2, and which conditions are necessary to get for them powers of 2, too.</p>
+<p>Given be the set of powers of $2$ by $P_{y} = 2^{y}$, $y \in \mathbb{N}_{0}$. It is unknown if, apart from $P_{y=0} = 2^{0} = 1$, $P_{y=1} = 2^{1} = 2$, $P_{y=2} = 2^{2} = 4$, $P_{y=3} = 2^{3} = 8$ and $P_{y=7} = 2^{7} = 128$, there exist more $P_{y}$'s whose digits are powers of $2$ (<i>A130693</i> in the On-line Encyclopedia of Integer Sequences (OEIS) <a href="http://oeis.org/A130693" title="External: On-line Encyclopedia of Integer Sequences (OEIS)" target="_blank">http://oeis.org/A130693</a> [Dre07]) [Wel97], too.</p>
+<p>Looking at the set of powers of $2$'s [Slo], we know that a $m$-digit power of $2$ by $P_{y}$, has a periodicity of $\varphi\left(5^{k}\right) = 4 \cdot 5^{k-1}$ for the last $k \leq m$ digits, starting at $2^{k}$ [YY64]. Taking the known periodicity of the last $k$-digits into account, we want to discuss properties for the last $k^{\prime} &gt; k$ digits, for fixed last $k$-digits of $P_{y}$.</p>
+<p><b>Notation.</b> If we write $2^{y}_{k}$, we are talking about the $k$'th digit (counted from right to left, starting counting by $1$) of $2^{y}$, in base $10$ representation. For step sizes we write $d^{k + 1}_{y,k}$, meaning the step size of the $k + 1$-digit, starting by $2^{y}$, with a $k$-digit periodicity. Furthermore, we will denote the set of all one-digit powers of $2$ by $\mathcal{P}_{2} := { 1, 2, 4, 8 }$.</p>
+<p>For this, at first, we also considered $k$-digit structures of powers of $2$ in generally, and used the following two lemmas as starting point for our proofs in the mentioned paper.</p>
+<br />
+<p><b>Lemma 2.1</b> ($k$-digits structure). <i>Let be $P_{y} = 2^{y}$, $y \in \mathbb{N}_{0}$, and the last $k^{\star}$-digits periodical with $\varphi\left(5^{k^{\star}}\right) = 4 \cdot 5^{k^{\star} - 1}$, for all $2^{y} \geq 2^{k^{\star}}$, $k^{\star} \geq 2$. Then for $2^{k + k^{\star} + \varphi\left(5^{k}\right)}$, $k \in \left[ k^{\star}, k^{\star} + \varphi\left(5^{k^{\star} - 1}\right) - 1 \right]$, the last $k$-digits are given by $2^{1 + k^{\star} + \varphi\left(5^{1}\right)}_{1} \cdot 2^{k - 1}$, with $k - x \approx \left(1 - \log_{10}\left(2\right)\right)k - k^{\star}\log_{10}\left(2\right)$ leading zeros for $k \geq 2$, and at least one leading zero for $k \geq 3$.</i></p>
+<p><i>Proof.</i> We know, that for the last $k$-digits $2^{k + k^{\star} + \varphi\left(5^{k}\right)} \sim 2^{k + k^{\star}}$, which have $x \approx \left(k + k^{\star}\right) \log_{10}\left(2\right)$ digits. Since, we also have the periodicity $\varphi\left(5^{k}\right)$, we directly get $k - x \approx \left(1 - \log_{10}\left(2\right)\right)k - k^{\star}\log_{10}\left(2\right)$ for the number of leading zeros. Looking at $0 \leq k - x$, we receive $k \gtrsim k^{\star} \frac{\log_{10}\left(2\right)}{1 - \log_{10}\left(2\right)}$, and hence $k \geq 2$ by the constraint $k^{\star} \geq 2$, and for $1 \geq k - x$, with $k = k^{\star}$, we recive $k \gtrsim \frac{1}{1 - 2\log_{10}\left(2\right)}$, and hence $k \geq 3$. Finally it is easy to see, that the statement is always satisfied for $k \geq k^{\star}$, because of $k^{\star} \gtrsim k^{\star} \frac{\log_{10}\left(2\right)}{1 - \log_{10}\left(2\right)} \approx 0.4k^{\star}$ for $k = k^{*}$.</p>
+<br />
+<p><b>Lemma 2.2</b> ($k^{\star}$-digits fixed structure). <i> Let be $P_{y} = 2^{y}$, $y \in \mathbb{N}_{0}$, and the last $k^{\star}$-digits periodical with $\varphi\left(5^{k^{\star}}\right) = 4 \cdot 5^{k^{\star} - 1}$, for all $2^{y} \geq 2^{k^{\star}}$, $k^{\star} \geq 2$. Then for $2^{k + k^{\star} + \varphi\left(5^{k}\right)}$, $k \in \left[ k^{\star}, k^{\star} + \varphi\left(5^{k^{\star} - 1}\right) - 1 \right]$, the last $k + 1$ to $k + \delta k$-digits are fixed for at least $\delta k = k^{\star}$ digits. </i></p>
 <p><i>Proof.</i>
-    Consider <span class="math">\(\left( 2^{k + k^{\star} + \varphi\left(5^{k}\right)} - 2^{1 + k^{\star} + \varphi\left(5^{1}\right)}_{1} \cdot 2^{k - 1} \right) \cdot 10^{-k} \cdot 2^{\varphi\left(5^{\delta k}\right)} \approx \left( 2^{\left(k + 1\right) + k^{\star} + \varphi\left(5^{k + 1}\right)} - 2^{1 + k^{\star} + \varphi\left(5^{1}\right)}_{1} \cdot 2^{\left(k + 1\right) - 1} \right) \cdot 10^{-\left(k + 1\right)}\)</span><br />
-    <span class="math">\(\left( 2^{k + k^{\star} + \varphi\left(5^{k}\right)} - 2^{1 + k^{\star} + \varphi\left(5^{1}\right)}_{1} \cdot 2^{k - 1} \right) \cdot 2^{\varphi\left(5^{\delta k}\right)} \approx \left( 2^{k + k^{\star} + \varphi\left(5^{k}\right)} \cdot 2^{4\varphi\left(5^{k}\right)} - 2^{1 + k^{\star} + \varphi\left(5^{1}\right)}_{1} \cdot 2^{k - 1} \right) \cdot 5^{-1},\)</span><br />
-    for which we can equating the coefficients with approximation. We look at <span class="math">\(\varphi\left(5^{\delta k}\right) \approx 4\varphi\left(5^{k}\right)\)</span>, and receive <span class="math">\(\delta k \approx \lfloor \log_{5}\left(4 \cdot 5^{k}\right) \rfloor \approx \lfloor 1.86 k \rfloor \approx k\)</span>. Finally, we can conclude <span class="math">\(\delta k \gtrsim k^{\star}\)</span> for <span class="math">\(k \in \left[ k^{\star}, k^{\star} + \varphi\left(5^{k^{\star} - 1}\right) - 1 \right]\)</span>.</p>
+Consider $\left( 2^{k + k^{\star} + \varphi\left(5^{k}\right)} - 2^{1 + k^{\star} + \varphi\left(5^{1}\right)}_{1} \cdot 2^{k - 1} \right) \cdot 10^{-k} \cdot 2^{\varphi\left(5^{\delta k}\right)} \approx \left( 2^{\left(k + 1\right) + k^{\star} + \varphi\left(5^{k + 1}\right)} - 2^{1 + k^{\star} + \varphi\left(5^{1}\right)}_{1} \cdot 2^{\left(k + 1\right) - 1} \right) \cdot 10^{-\left(k + 1\right)}$<br />
+$\left( 2^{k + k^{\star} + \varphi\left(5^{k}\right)} - 2^{1 + k^{\star} + \varphi\left(5^{1}\right)}_{1} \cdot 2^{k - 1} \right) \cdot 2^{\varphi\left(5^{\delta k}\right)} \approx \left( 2^{k + k^{\star} + \varphi\left(5^{k}\right)} \cdot 2^{4\varphi\left(5^{k}\right)} - 2^{1 + k^{\star} + \varphi\left(5^{1}\right)}_{1} \cdot 2^{k - 1} \right) \cdot 5^{-1},$<br />
+for which we can equating the coefficients with approximation. We look at $\varphi\left(5^{\delta k}\right) \approx 4\varphi\left(5^{k}\right)$, and receive $\delta k \approx \lfloor \log_{5}\left(4 \cdot 5^{k}\right) \rfloor \approx \lfloor 1.86 k \rfloor \approx k$. Finally, we can conclude $\delta k \gtrsim k^{\star}$ for $k \in \left[ k^{\star}, k^{\star} + \varphi\left(5^{k^{\star} - 1}\right) - 1 \right]$.</p>
 <h3>References</h3>
 <p>[Dre07] Gregory P. Dresden. A130693 - OEIS: Powers of 2 whose digits are powers of 2. <a href="http://oeis.org/A130693" title="External: Powers of 2 whose digits are powers of 2" target="_blank">http://oeis.org/A130693</a>, 07 2007. (Accessed on 2021/07/18).<br />
 [Slo] N. J. A. Sloane. Table of n, 2 n for n = 0..1000 - OEIS. <a href="http://oeis.org/A000079/b000079.txt" title="External: Table of n, 2 n for n = 0..1000" target="_blank">http://oeis.org/A000079/b000079.txt</a>. (Accessed on 2021/08/08).<br />
 [Wel97] David Wells. The Penguin dictionary of curious and interesting numbers. Penguin, 1997.<br />
 [YY64] AM Yaglom and IM Yaglom. Challenging mathematical problems with elementary solutions. I, 1964.</p>
-<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
 
-    if (false) {
-        align = (screen.width < 768) ? "left" : align;
-        indent = (screen.width < 768) ? "0em" : indent;
-        linebreak = (screen.width < 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-</script>
 
 
         

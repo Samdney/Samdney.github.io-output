@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en_us">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,7 +36,7 @@
         <meta name="twitter:site" content="@SamdneyTweet" />
         <meta name="twitter:creator" content="@SamdneyTweet" />
         <meta name="twitter:title" content="Let`s calculate primes! Part I - Representation of times tables" />
-        <meta name="twitter:description" content="<p>Describtion of prime numbers.</p>" />
+        <meta name="twitter:description" content="Describtion of prime numbers." />
         <meta name="twitter:image" content="https://blog.carolin-zoebelein.de/images/twittercard.jpg" />
 
         <!-- RSS Feeds -->
@@ -49,6 +49,57 @@
         <![endif]-->
 
 
+
+		<!-- MathJaX -->
+
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			config: ['MMLorHTML.js'],
+			loader: {
+				load: ['input/tex-base', '[tex]/ams', 'output/svg', 'ui/menu', '[tex]/require']
+			},
+			TeX: {
+				packages: ['base', 'require', 'ams'],
+				extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'],
+				equationNumbers: { autoNumber: 'AMS' }
+			},
+			//packages: ['base', 'require', 'ams'],
+			//extensions: ['tex2jax.js', 'AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'],
+			//equationNumbers: { autoNumber: 'AMS' },
+			tags: 'ams',
+    		tagSide: 'right',
+			jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+			//extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js'],
+			extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js'],
+			//displayAlign: 'align',
+			//displayIndent: 'indent',
+			showMathMenu: true,
+			messageStyle: 'normal',
+			tex2jax: {
+				inlineMath: [ ['$','$'], ['\\\\(','\\\\)'] ],
+				displayMath: [ ['$$','$$'] ],
+				processEscapes: true
+				,
+				preview: 'TeX'
+			},
+			//tex: {
+			//	processEscapes: false
+			//}
+			'HTML-CSS': {
+				styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'}},
+				linebreaks: { automatic: "linebreak", width: '90% container' },
+			}
+		});
+	</script>
+	
+	<script type="text/javascript">
+  	MathJax.Hub.Configured()
+	</script>
+
+
+	<script type="text/javascript"
+	   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js">
+	</script>
 
     </head>
 
@@ -101,7 +152,7 @@
               <div class="col-lg-12">
                   <div class="header-content">
                       <h1 class="header-title">Let`s calculate primes! Part I - Representation of times tables</h1>
-                      <p class="header-date">By <a href="/author/carolin-zobelein.html">Carolin Zöbelein</a>, Fri, 29 Dec 2017, in category <a href="/category/math.html">Math</a></p>
+                      <p class="header-date">By <a href="/author/carolin-zobelein.html">Carolin Zöbelein</a>, Fri 29 December 2017, in category <a href="/category/math.html">Math</a></p>
                       <div class="header-underline"></div>
                       <div class="clearfix"></div>
                       <p class="pull-right header-tags">
@@ -123,7 +174,7 @@
     <div class="container content">
 
 	<h1 class="entry-title"><a href="/2017/12/lets-calculate-primes-part-i-representation-of-times-tables.html">Let`s calculate primes! Part I - Representation of times tables</a></h1>
-        <p><font size="2.3em"><i>Fri, 29 Dec 2017 by Carolin Zöbelein<br />
+        <p><font size="2.3em"><i>Fri 29 December 2017 by Carolin Zöbelein<br />
         Category: Math<br />
 
 	Tags: <a href="/tag/number-theory.html">number theory</a>, <a href="/tag/primes.html">primes</a>	
@@ -132,102 +183,37 @@
 	</p>
 
 
-        <p>Some days ago, I had several nice ideas for calculating primes recursively, which I want to share with you in a small series of posts.  </p>
-<p>I will use some insights of my work <a href="https://github.com/Samdney/primescalc" target="_blank">https://github.com/Samdney/primescalc</a> and assume you already know they. If not, please read it sidewise to the following posts.  </p>
-<p>We have given our already known equation<br>
-</p>
-<div class="math">$$
-    x_{i,j}     = 2x_{i}x_{j} + x_{i} + x_{j}\\
-            = \left(2x_{j} + 1\right)x_{i} + x_{j}\\
-            = \left(2x_{i} + 1\right)x_{j} + x_{i}
-$$</div>
-<p>
-with <span class="math">\(x_{i}, x_{j} \in \mathbb{N}\)</span>. Remember that this equation gives us all <span class="math">\(x_{i,j}\)</span> for which <span class="math">\(2x_{i,j} + 1\)</span> is an integer divisible number. </p>
-<p>So let`s look, for example on the numbers of <span class="math">\(x_{i} = 1\)</span>, which are
-</p>
-<div class="math">$$x_{1,j} = 4, 7, 10, 13, 16, 19, 22, 25, 28, \dots$$</div>
-<p>.</p>
+        <p>Some days ago, I had several nice ideas for calculating primes recursively, which I want to share with you in a small series of posts.</p>
+<p>I will use some insights of my work <a href="https://github.com/Samdney/primescalc" target="_blank">https://github.com/Samdney/primescalc</a> and assume you already know they. If not, please read it sidewise to the following posts.</p>
+<p>We have given our already known equation<br />
+$$
+x_{i,j} 	= 2x_{i}x_{j} + x_{i} + x_{j}\
+= \left(2x_{j} + 1\right)x_{i} + x_{j}\
+= \left(2x_{i} + 1\right)x_{j} + x_{i}
+$$
+with $x_{i}, x_{j} \in \mathbb{N}$. Remember that this equation gives us all $x_{i,j}$ for which $2x_{i,j} + 1$ is an integer divisible number.</p>
+<p>So let`s look, for example on the numbers of $x_{i} = 1$, which are
+$$x_{1,j} = 4, 7, 10, 13, 16, 19, 22, 25, 28, \dots$$.</p>
 <p>Now we will choose a simple way of representation of this numbers. Be given the general form of a number in decimal representation:
-</p>
-<div class="math">$$
-    \sum_{k = 0}^{n} 10^{k}
-$$</div>
-<p>
-with <span class="math">\(n+1\)</span>, <span class="math">\(n \in \mathbb{N}\)</span>, digits. Now assume, in our example, the number 4 is represented by the number 1, at the <span class="math">\(4+1\)</span> digit, the number 7 by the number 1, at the <span class="math">\(7+1\)</span> digit and so on. So we can write (read from right to left) as represenation for <span class="math">\(x_{1,j}\)</span>:
-</p>
-<div class="math">$$
-    \sum_{x_{j}} 10^{\left(2x_{i} + 1\right)x_{j} + x_{i}} = \sum_{x_{j}} 10^{3x_{j} + 1}
-$$</div>
-<p>
+$$
+\sum_{k = 0}^{n} 10^{k}
+$$
+with $n+1$, $n \in \mathbb{N}$, digits. Now assume, in our example, the number 4 is represented by the number 1, at the $4+1$ digit, the number 7 by the number 1, at the $7+1$ digit and so on. So we can write (read from right to left) as represenation for $x_{1,j}$:
+$$
+\sum_{x_{j}} 10^{\left(2x_{i} + 1\right)x_{j} + x_{i}} = \sum_{x_{j}} 10^{3x_{j} + 1}
+$$
 and
-</p>
-<div class="math">$$
+$$
 \dots 10010010010010010010010010000
-$$</div>
-<p>In this way, we can write every of our times tables which are given by <span class="math">\(x_{i,j} = \left(2x_{i} + 1\right)x_{j} + x_{i}\)</span>.  </p>
+$$</p>
+<p>In this way, we can write every of our times tables which are given by $x_{i,j} = \left(2x_{i} + 1\right)x_{j} + x_{i}$.</p>
 <p>If we finally calculate this sum, we receive
-</p>
-<div class="math">$$
-    \sum_{x_{j} = l}^{u} 10^{\left(2x_{i} + 1\right)x_{j} + x_{i}} = - \frac{10^{\left(2x_{i} + 1\right)l + x_{i}} - 10^{\left(2x_{i} + 1\right)\left(u+1\right) + x_{i}}}{10^{2x_{i} + 1} - 1}
-$$</div>
-<p>. See also <a href="https://www.wolframalpha.com/input/?i=sum+z%3Dl,+u,+10%5E%28%282*x+%2B+1%29*z+%2B+x%29#7928802016733054506" target="_blank">wolframalpha.com</a>.</p>
-<p>But what can we do with this, now?<br>
+$$
+\sum_{x_{j} = l}^{u} 10^{\left(2x_{i} + 1\right)x_{j} + x_{i}} = - \frac{10^{\left(2x_{i} + 1\right)l + x_{i}} - 10^{\left(2x_{i} + 1\right)\left(u+1\right) + x_{i}}}{10^{2x_{i} + 1} - 1}
+$$. See also <a href="https://www.wolframalpha.com/input/?i=sum+z%3Dl,+u,+10%5E%28%282*x+%2B+1%29*z+%2B+x%29#7928802016733054506" target="_blank">wolframalpha.com</a>.</p>
+<p>But what can we do with this, now?<br />
 In the next post we will look at the intersection of times tables with this kind of representation.</p>
-<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
 
-    if (false) {
-        align = (screen.width < 768) ? "left" : align;
-        indent = (screen.width < 768) ? "0em" : indent;
-        linebreak = (screen.width < 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-</script>
 
 
         

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en_us">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,7 +36,7 @@
         <meta name="twitter:site" content="@SamdneyTweet" />
         <meta name="twitter:creator" content="@SamdneyTweet" />
         <meta name="twitter:title" content="Primes matrix: Approximation 2" />
-        <meta name="twitter:description" content="<p>Since I wasn't happy about the final sum in my last post, I think about an alternative way.</p>" />
+        <meta name="twitter:description" content="Since I wasn't happy about the final sum in my last post, I think about an alternative way." />
         <meta name="twitter:image" content="https://blog.carolin-zoebelein.de/images/twittercard.jpg" />
 
         <!-- RSS Feeds -->
@@ -49,6 +49,57 @@
         <![endif]-->
 
 
+
+		<!-- MathJaX -->
+
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			config: ['MMLorHTML.js'],
+			loader: {
+				load: ['input/tex-base', '[tex]/ams', 'output/svg', 'ui/menu', '[tex]/require']
+			},
+			TeX: {
+				packages: ['base', 'require', 'ams'],
+				extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'],
+				equationNumbers: { autoNumber: 'AMS' }
+			},
+			//packages: ['base', 'require', 'ams'],
+			//extensions: ['tex2jax.js', 'AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'],
+			//equationNumbers: { autoNumber: 'AMS' },
+			tags: 'ams',
+    		tagSide: 'right',
+			jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+			//extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js'],
+			extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js'],
+			//displayAlign: 'align',
+			//displayIndent: 'indent',
+			showMathMenu: true,
+			messageStyle: 'normal',
+			tex2jax: {
+				inlineMath: [ ['$','$'], ['\\\\(','\\\\)'] ],
+				displayMath: [ ['$$','$$'] ],
+				processEscapes: true
+				,
+				preview: 'TeX'
+			},
+			//tex: {
+			//	processEscapes: false
+			//}
+			'HTML-CSS': {
+				styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'}},
+				linebreaks: { automatic: "linebreak", width: '90% container' },
+			}
+		});
+	</script>
+	
+	<script type="text/javascript">
+  	MathJax.Hub.Configured()
+	</script>
+
+
+	<script type="text/javascript"
+	   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js">
+	</script>
 
     </head>
 
@@ -101,7 +152,7 @@
               <div class="col-lg-12">
                   <div class="header-content">
                       <h1 class="header-title">Primes matrix: Approximation 2</h1>
-                      <p class="header-date">By <a href="/author/carolin-zobelein.html">Carolin Zöbelein</a>, Thu, 05 Apr 2018, in category <a href="/category/math.html">Math</a></p>
+                      <p class="header-date">By <a href="/author/carolin-zobelein.html">Carolin Zöbelein</a>, Thu 05 April 2018, in category <a href="/category/math.html">Math</a></p>
                       <div class="header-underline"></div>
                       <div class="clearfix"></div>
                       <p class="pull-right header-tags">
@@ -123,7 +174,7 @@
     <div class="container content">
 
 	<h1 class="entry-title"><a href="/2018/04/primesapprox2.html">Primes matrix: Approximation 2</a></h1>
-        <p><font size="2.3em"><i>Thu, 05 Apr 2018 by Carolin Zöbelein<br />
+        <p><font size="2.3em"><i>Thu 05 April 2018 by Carolin Zöbelein<br />
         Category: Math<br />
 
 	Tags: <a href="/tag/number-theory.html">number theory</a>, <a href="/tag/primes.html">primes</a>	
@@ -133,104 +184,49 @@
 
 
         <p>Since I wasn't happy about the final sum in my last post
-<a href="https://samdney.github.io/2018/03/primes-matrix-approximation.html">Primes matrix: Approximation</a>, I think about an alternative way.  </p>
-<p>We had 
-</p>
-<div class="math">$$
-    x_{\left(a,\dots,b\right),kj} = \lim_{m \rightarrow \infty} \left(\prod_{i=a}^{b} \exp\left(I 2\pi\frac{k-x_{i}}{2x_{i} + 1} \epsilon\left(m\right)\right)\right) \delta_{kj} \\
-    = \lim_{m \rightarrow \infty} \exp\left(\sum_{i = a}^{b} I2\pi\frac{k - x_{i}}{2x_{i} + 1}\epsilon\left(m\right)\right) \delta_{kj}
-$$</div>
-<p>in which we made the product over all <span class="math">\(\exp\)</span>-functions for each <span class="math">\(x_{i}\)</span>. Now,
-instead we will do the product over the arguments of the <span class="math">\(\exp\)</span>-functions</p>
-<div class="math">$$
-     x_{\left(a,\dots,b\right),kj} = = \lim_{m \rightarrow \infty} \exp\left(\prod_{i = a}^{b} I2\pi\frac{k - x_{i}}{2x_{i} + 1}\epsilon\left(m\right)\right) \delta_{kj}
-$$</div>
+<a href="https://samdney.github.io/2018/03/primes-matrix-approximation.html">Primes matrix: Approximation</a>, I think about an alternative way.</p>
+<p>We had
+$$
+x_{\left(a,\dots,b\right),kj} = \lim_{m \rightarrow \infty} \left(\prod_{i=a}^{b} \exp\left(I 2\pi\frac{k-x_{i}}{2x_{i} + 1} \epsilon\left(m\right)\right)\right) \delta_{kj} \
+= \lim_{m \rightarrow \infty} \exp\left(\sum_{i = a}^{b} I2\pi\frac{k - x_{i}}{2x_{i} + 1}\epsilon\left(m\right)\right) \delta_{kj}
+$$</p>
+<p>in which we made the product over all $\exp$-functions for each $x_{i}$. Now,
+instead we will do the product over the arguments of the $\exp$-functions</p>
+<p>$$
+x_{\left(a,\dots,b\right),kj} = \lim_{m \rightarrow \infty} \exp\left(\prod_{i = a}^{b} I2\pi\frac{k - x_{i}}{2x_{i} + 1}\epsilon\left(m\right)\right) \delta_{kj}
+$$</p>
 <p>Let's look at the qualities of this product</p>
-<div class="math">$$
-    \prod_{i = a}^{b} \frac{k - x_{i}}{2x_{i} + 1}
-$$</div>
+<p>$$
+\prod_{i = a}^{b} \frac{k - x_{i}}{2x_{i} + 1}
+$$</p>
 <p>and under which conditions we receive integers. From my work
 <a href="https://github.com/Samdney/primescalc" target="_blank">https://github.com/Samdney/primescalc</a>
-we already know that we get troubles if at least one of the <span class="math">\(2x_{i} + 1\)</span> is
+we already know that we get troubles if at least one of the $2x_{i} + 1$ is
 a divisible number. Hence, we always asume that all our
-numbers <span class="math">\(2x_{i} + 1\)</span> are primes.</p>
+numbers $2x_{i} + 1$ are primes.</p>
 <p>We receive integer values in the following cases</p>
 <ul>
 <li>
-<p><strong>Case 1:</strong> For all <span class="math">\(k\)</span>-values which are also solutions for every single
-    <span class="math">\(\exp\)</span>-equation.</p>
+<p><strong>Case 1:</strong> For all $k$-values which are also solutions for every single
+$\exp$-equation.</p>
 </li>
 <li>
-<p><strong>Case 2:</strong> For all <span class="math">\(k\)</span>-values which is a solution for at least one single
-    <span class="math">\(\exp\)</span>-equation and also leads to the trivial solution with
-    <span class="math">\(x_{\left(1\right),j} = N\left(2x_{\left(2\right),i} + 1\right)\)</span>, <span class="math">\(N \in \mathbb{N}\)</span>.</p>
+<p><strong>Case 2:</strong> For all $k$-values which is a solution for at least one single
+$\exp$-equation and also leads to the trivial solution with
+$x_{\left(1\right),j} = N\left(2x_{\left(2\right),i} + 1\right)$, $N \in \mathbb{N}$.</p>
 </li>
 </ul>
-<p>For the second case, we take the example of two equations with <span class="math">\(x_{1} = 2\)</span> and
-<span class="math">\(x_{2} = 3\)</span></p>
-<div class="math">$$
-    \frac{k - x_{1}}{2x_{1} + 1} \frac{k - x_{2}}{2x_{2} + 1} = \frac{\left(k - 2\right)\left(k - 3\right)}{5
-    \cdot 7}
-$$</div>
-<p>Here we receive one solution for <span class="math">\(k = 37\)</span>, <span class="math">\(\frac{35 \cdot 34}{35} = 34\)</span>, which is also a solution for
-<span class="math">\(\frac{37 - 2}{5} = 7\)</span> and an other solution for <span class="math">\(k = 38\)</span>, <span class="math">\(\frac{36 \cdot
-35}{35} = 36\)</span> which is also a solution for <span class="math">\(\frac{38 - 3}{7} = 5\)</span>. We see that
-<span class="math">\(k\)</span> leads to the trivial case in which <span class="math">\(x_{j}\)</span> of one single <span class="math">\(\exp\)</span>-equation is equal to the prime value of an other single <span class="math">\(\exp\)</span>-equation or the product of primes of several single <span class="math">\(\exp\)</span>-equations.</p>
-<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
+<p>For the second case, we take the example of two equations with $x_{1} = 2$ and
+$x_{2} = 3$</p>
+<p>$$
+\frac{k - x_{1}}{2x_{1} + 1} \frac{k - x_{2}}{2x_{2} + 1} = \frac{\left(k - 2\right)\left(k - 3\right)}{5
+\cdot 7}
+$$</p>
+<p>Here we receive one solution for $k = 37$, $\frac{35 \cdot 34}{35} = 34$, which is also a solution for
+$\frac{37 - 2}{5} = 7$ and an other solution for $k = 38$, $\frac{36 \cdot
+35}{35} = 36$ which is also a solution for $\frac{38 - 3}{7} = 5$. We see that
+$k$ leads to the trivial case in which $x_{j}$ of one single $\exp$-equation is equal to the prime value of an other single $\exp$-equation or the product of primes of several single $\exp$-equations.</p>
 
-    if (false) {
-        align = (screen.width < 768) ? "left" : align;
-        indent = (screen.width < 768) ? "0em" : indent;
-        linebreak = (screen.width < 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-</script>
 
 
         

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en_us">
     <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -44,6 +44,57 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
+	<!-- MathJaX -->
+
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			config: ['MMLorHTML.js'],
+			loader: {
+				load: ['input/tex-base', '[tex]/ams', 'output/svg', 'ui/menu', '[tex]/require']
+			},
+			TeX: {
+				packages: ['base', 'require', 'ams'],
+				extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'],
+				equationNumbers: { autoNumber: 'AMS' }
+			},
+			//packages: ['base', 'require', 'ams'],
+			//extensions: ['tex2jax.js', 'AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'],
+			//equationNumbers: { autoNumber: 'AMS' },
+			tags: 'ams',
+    		tagSide: 'right',
+			jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+			//extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js'],
+			extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js'],
+			//displayAlign: 'align',
+			//displayIndent: 'indent',
+			showMathMenu: true,
+			messageStyle: 'normal',
+			tex2jax: {
+				inlineMath: [ ['$','$'], ['\\\\(','\\\\)'] ],
+				displayMath: [ ['$$','$$'] ],
+				processEscapes: true
+				,
+				preview: 'TeX'
+			},
+			//tex: {
+			//	processEscapes: false
+			//}
+			'HTML-CSS': {
+				styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'}},
+				linebreaks: { automatic: "linebreak", width: '90% container' },
+			}
+		});
+	</script>
+	
+	<script type="text/javascript">
+  	MathJax.Hub.Configured()
+	</script>
+
+
+	<script type="text/javascript"
+	   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js">
+	</script>
 
     </head>
 
@@ -104,15 +155,15 @@
             <hr style="border:dotted #000000 1px;"/>
             <h2><a href="/index4.html">Last Posts <small>- page 4</small></a></h2>
             <dl class="dl-horizontal">
-                        <dt>Fri, 29 Dec 2017</dt>
+                        <dt>Fri 29 December 2017</dt>
                         <dd><a href="/2017/12/lets-calculate-primes-part-i-representation-of-times-tables.html">Let`s calculate primes! Part I - Representation of times tables</a></dd>
-                        <dd><p>Describtion of prime numbers.</p></dd>
-                        <dt>Mon, 11 Dec 2017</dt>
+                        <dd>Describtion of prime numbers.</dd>
+                        <dt>Mon 11 December 2017</dt>
                         <dd><a href="/2017/12/beautiful-primes.html">Beautiful primes!</a></dd>
-                        <dd><p>Description of primes.</p></dd>
-                        <dt>Sun, 26 Nov 2017</dt>
+                        <dd>Description of primes.</dd>
+                        <dt>Sun 26 November 2017</dt>
                         <dd><a href="/2017/11/hello-world.html">Hello World</a></dd>
-                        <dd><p>Hello World!</p></dd>
+                        <dd>Hello World!</dd>
             </dl>
             <hr style="border:dotted #000000 1px;"/>
                     <a href="/tag/algorithm.html">#algorithm</a>

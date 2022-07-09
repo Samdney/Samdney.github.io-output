@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en_us">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,7 +36,7 @@
         <meta name="twitter:site" content="@SamdneyTweet" />
         <meta name="twitter:creator" content="@SamdneyTweet" />
         <meta name="twitter:title" content="Let`s calculate primes! Part III - Intersection of times tables: sum formula" />
-        <meta name="twitter:description" content="<p>Describtion of prime numbers part 3.</p>" />
+        <meta name="twitter:description" content="Describtion of prime numbers part 3." />
         <meta name="twitter:image" content="https://blog.carolin-zoebelein.de/images/twittercard.jpg" />
 
         <!-- RSS Feeds -->
@@ -49,6 +49,57 @@
         <![endif]-->
 
 
+
+		<!-- MathJaX -->
+
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			config: ['MMLorHTML.js'],
+			loader: {
+				load: ['input/tex-base', '[tex]/ams', 'output/svg', 'ui/menu', '[tex]/require']
+			},
+			TeX: {
+				packages: ['base', 'require', 'ams'],
+				extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'],
+				equationNumbers: { autoNumber: 'AMS' }
+			},
+			//packages: ['base', 'require', 'ams'],
+			//extensions: ['tex2jax.js', 'AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'],
+			//equationNumbers: { autoNumber: 'AMS' },
+			tags: 'ams',
+    		tagSide: 'right',
+			jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+			//extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js'],
+			extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js'],
+			//displayAlign: 'align',
+			//displayIndent: 'indent',
+			showMathMenu: true,
+			messageStyle: 'normal',
+			tex2jax: {
+				inlineMath: [ ['$','$'], ['\\\\(','\\\\)'] ],
+				displayMath: [ ['$$','$$'] ],
+				processEscapes: true
+				,
+				preview: 'TeX'
+			},
+			//tex: {
+			//	processEscapes: false
+			//}
+			'HTML-CSS': {
+				styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'}},
+				linebreaks: { automatic: "linebreak", width: '90% container' },
+			}
+		});
+	</script>
+	
+	<script type="text/javascript">
+  	MathJax.Hub.Configured()
+	</script>
+
+
+	<script type="text/javascript"
+	   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js">
+	</script>
 
     </head>
 
@@ -101,7 +152,7 @@
               <div class="col-lg-12">
                   <div class="header-content">
                       <h1 class="header-title">Let`s calculate primes! Part III - Intersection of times tables: sum formula</h1>
-                      <p class="header-date">By <a href="/author/carolin-zobelein.html">Carolin Zöbelein</a>, Sat, 13 Jan 2018, in category <a href="/category/math.html">Math</a></p>
+                      <p class="header-date">By <a href="/author/carolin-zobelein.html">Carolin Zöbelein</a>, Sat 13 January 2018, in category <a href="/category/math.html">Math</a></p>
                       <div class="header-underline"></div>
                       <div class="clearfix"></div>
                       <p class="pull-right header-tags">
@@ -123,7 +174,7 @@
     <div class="container content">
 
 	<h1 class="entry-title"><a href="/2018/01/lets-calculate-primes-part-iii-intersection-of-times-tables-sum-formula.html">Let`s calculate primes! Part III - Intersection of times tables: sum formula</a></h1>
-        <p><font size="2.3em"><i>Sat, 13 Jan 2018 by Carolin Zöbelein<br />
+        <p><font size="2.3em"><i>Sat 13 January 2018 by Carolin Zöbelein<br />
         Category: Math<br />
 
 	Tags: <a href="/tag/number-theory.html">number theory</a>, <a href="/tag/primes.html">primes</a>	
@@ -133,89 +184,31 @@
 
 
         <p>In the post before, we looked at the intersection ot times tables and its problems. Now we will look at the belonging sum formula, which is given by
-</p>
-<div class="math">$$
-    \sum_{x_{i} = l^\prime}^{u^\prime}  \sum_{x_{j} = l}^{u} 10^{\left(2x_{i} + 1\right)x_{j} + x_{i}}  
-$$</div>
-<p>
+$$
+\sum_{x_{i} = l^\prime}^{u^\prime}  \sum_{x_{j} = l}^{u} 10^{\left(2x_{i} + 1\right)x_{j} + x_{i}}	
+$$
 and with our results before as
-</p>
-<div class="math">$$
-    \sum_{x_{i} = l^\prime}^{u^\prime} \left( - \frac{10^{\left(2x_{i} + 1\right)l + x_{i}} - 10^{\left(2x_{i} + 1\right)\left(u+1\right) + x_{i}}}{10^{2x_{i} + 1} - 1} \right)
-$$</div>
-<p>.</p>
+$$
+\sum_{x_{i} = l^\prime}^{u^\prime} \left( - \frac{10^{\left(2x_{i} + 1\right)l + x_{i}} - 10^{\left(2x_{i} + 1\right)\left(u+1\right) + x_{i}}}{10^{2x_{i} + 1} - 1} \right)
+$$.</p>
 <p>We are not able to solve this second sum analytical, but it can be interesting to look a bit around this sum. I had a look what <a href="https://www.wolframalpha.com/input/?i=-%2810%5Ex+%2810%5E%28l+%282+x+%2B+1%29%29+-+10%5E%28%28u+%2B+1%29+%282+x+%2B+1%29%29%29%29%2F%2810%5E%282+x+%2B+1%29+-+1%29" target="_blank">wolframalpha.com</a> is able to tell me about our first sum result and I found one thing which catched my attention.</p>
-<div class="math">$$
-    \int -\frac{10^{x}\left(10^{l\left(2x + 1\right)} - 10^{\left(u + 1\right)\left(2 x + 1\right)}\right)}{10^{2 x + 1} - 1} \mathrm{d}x
-$$</div>
-<div class="math">$$
-    = \frac{10^{x} \left(\frac{10^{2lx + l} {}_{2}F_{1}\left(1, l + \frac{1}{2}, l + \frac{3}{2}, 10^{2 x + 1}\right)}{2l + 1} - \frac{10^{(u + 1)(2 x + 1)} {}_{2}F_{1}\left(1, u + \frac{3}{2}, u + \frac{5}{2}, 10^{2 x + 1}\right)}{2 u + 3}\right)}{\log(10)} + constant,
-$$</div>
+<p>$$
+\int -\frac{10^{x}\left(10^{l\left(2x + 1\right)} - 10^{\left(u + 1\right)\left(2 x + 1\right)}\right)}{10^{2 x + 1} - 1} \mathrm{d}x
+$$
+$$
+= \frac{10^{x} \left(\frac{10^{2lx + l} {}_{2}F_{1}\left(1, l + \frac{1}{2}, l + \frac{3}{2}, 10^{2 x + 1}\right)}{2l + 1} - \frac{10^{(u + 1)(2 x + 1)} {}_{2}F_{1}\left(1, u + \frac{3}{2}, u + \frac{5}{2}, 10^{2 x + 1}\right)}{2 u + 3}\right)}{\log(10)} + constant,
+$$</p>
 <p>with</p>
-<div class="math">$$
-    {}_{2}F_{1}\left(a, b; c; x\right)
-$$</div>
-<p>is the hypergeometric function.  </p>
+<p>$$
+{}_{2}F_{1}\left(a, b; c; x\right)
+$$</p>
+<p>is the hypergeometric function.</p>
 <p>It's deeply interesting that we are able to find an integral which is connected to the Gamma-Function
 over the hypergeometric function and hence to primes. Althougth we are not able to do both sums
 exactly, this gives us an hint, that we are maybe able to do the first calculation with a sum and
-the second calculation with the help of an integration.  </p>
+the second calculation with the help of an integration.</p>
 <p>At the moment, we can't use this information, but we should keep this in mind.</p>
-<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
 
-    if (false) {
-        align = (screen.width < 768) ? "left" : align;
-        indent = (screen.width < 768) ? "0em" : indent;
-        linebreak = (screen.width < 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-</script>
 
 
         

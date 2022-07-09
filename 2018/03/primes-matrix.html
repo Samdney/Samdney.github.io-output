@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en_us">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,7 +36,7 @@
         <meta name="twitter:site" content="@SamdneyTweet" />
         <meta name="twitter:creator" content="@SamdneyTweet" />
         <meta name="twitter:title" content="Primes matrix" />
-        <meta name="twitter:description" content="<p>Some time ago, I already wrote about representation ideas of primes ...</p>" />
+        <meta name="twitter:description" content="Some time ago, I already wrote about representation ideas of primes ..." />
         <meta name="twitter:image" content="https://blog.carolin-zoebelein.de/images/twittercard.jpg" />
 
         <!-- RSS Feeds -->
@@ -49,6 +49,57 @@
         <![endif]-->
 
 
+
+		<!-- MathJaX -->
+
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			config: ['MMLorHTML.js'],
+			loader: {
+				load: ['input/tex-base', '[tex]/ams', 'output/svg', 'ui/menu', '[tex]/require']
+			},
+			TeX: {
+				packages: ['base', 'require', 'ams'],
+				extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'],
+				equationNumbers: { autoNumber: 'AMS' }
+			},
+			//packages: ['base', 'require', 'ams'],
+			//extensions: ['tex2jax.js', 'AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'],
+			//equationNumbers: { autoNumber: 'AMS' },
+			tags: 'ams',
+    		tagSide: 'right',
+			jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+			//extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js'],
+			extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js'],
+			//displayAlign: 'align',
+			//displayIndent: 'indent',
+			showMathMenu: true,
+			messageStyle: 'normal',
+			tex2jax: {
+				inlineMath: [ ['$','$'], ['\\\\(','\\\\)'] ],
+				displayMath: [ ['$$','$$'] ],
+				processEscapes: true
+				,
+				preview: 'TeX'
+			},
+			//tex: {
+			//	processEscapes: false
+			//}
+			'HTML-CSS': {
+				styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'}},
+				linebreaks: { automatic: "linebreak", width: '90% container' },
+			}
+		});
+	</script>
+	
+	<script type="text/javascript">
+  	MathJax.Hub.Configured()
+	</script>
+
+
+	<script type="text/javascript"
+	   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js">
+	</script>
 
     </head>
 
@@ -101,7 +152,7 @@
               <div class="col-lg-12">
                   <div class="header-content">
                       <h1 class="header-title">Primes matrix</h1>
-                      <p class="header-date">By <a href="/author/carolin-zobelein.html">Carolin Zöbelein</a>, Fri, 23 Mar 2018, in category <a href="/category/math.html">Math</a></p>
+                      <p class="header-date">By <a href="/author/carolin-zobelein.html">Carolin Zöbelein</a>, Fri 23 March 2018, in category <a href="/category/math.html">Math</a></p>
                       <div class="header-underline"></div>
                       <div class="clearfix"></div>
                       <p class="pull-right header-tags">
@@ -123,7 +174,7 @@
     <div class="container content">
 
 	<h1 class="entry-title"><a href="/2018/03/primes-matrix.html">Primes matrix</a></h1>
-        <p><font size="2.3em"><i>Fri, 23 Mar 2018 by Carolin Zöbelein<br />
+        <p><font size="2.3em"><i>Fri 23 March 2018 by Carolin Zöbelein<br />
         Category: Math<br />
 
 	Tags: <a href="/tag/number-theory.html">number theory</a>, <a href="/tag/primes.html">primes</a>	
@@ -134,36 +185,35 @@
 
         <p>Some time ago, I already wrote about representation ideas of primes and we saw
 that we run in troubles with this. Today, I want to present you a similar
-approach.  </p>
+approach.</p>
 <p>Let's start again with our equation</p>
-<div class="math">$$
+<p>$$
 x_{ij} = \left(2x_{i} + 1\right)x_{j} + x_{i} \\
 y_{ij} = \left(2x_{ij} + 1\right)
-$$</div>
+$$</p>
 <p>and the following represenation</p>
-<div class="math">$$
-x_{1j} \ \ \ \  | 00010010010010010010 \dots \\  
-x_{2j} \ \  \ \  | 00000010000100001000 \dots \\ 
+<p>$$
+x_{1j} \ \ \ \  | 00010010010010010010 \dots \\
+x_{2j} \ \  \ \  | 00000010000100001000 \dots \\
 x_{\left(1,2\right),j} | 11101101101001100101 \dots
-$$</div>
-<p>The first line is given by <span class="math">\(x_{1j} = 3x_{j} + 1 = 4, 7, 10, 13, 16, 19\)</span>. If
+$$</p>
+<p>The first line is given by $x_{1j} = 3x_{j} + 1 = 4, 7, 10, 13, 16, 19$. If
 we look a the numbers from 1 to 20 (from left to right), we represent all numbers which are generated
-by <span class="math">\(x_{1j}\)</span>, by '1' and the other numbers by '0'. In the second line, we do
-the same for <span class="math">\(x_{2j} = 5x_{j} + 2 = 7, 12, 17\)</span>.</p>
-<p>In the third line we see <span class="math">\(x_{\left(1,2\right),j}\)</span>, which represents all
-numbers which are not element of <span class="math">\(x_{1j}\)</span> and not element of <span class="math">\(x_{2j}\)</span> by
+by $x_{1j}$, by '1' and the other numbers by '0'. In the second line, we do
+the same for $x_{2j} = 5x_{j} + 2 = 7, 12, 17$.</p>
+<p>In the third line we see $x_{\left(1,2\right),j}$, which represents all
+numbers which are not element of $x_{1j}$ and not element of $x_{2j}$ by
 '1' and the others by '0'. So we can write</p>
-<div class="math">$$
+<p>$$
 x_{\left(1,2\right),j} = \overline{x_{1j}} \cdot \overline{x_{2j}}
-$$</div>
-<p>
+$$
 . Ok. What can we do with this, now?</p>
-<p>At first, we look at <span class="math">\(x_{1j}\)</span> and <span class="math">\(x_{2j}\)</span>. We will rewrite them to matrices
-<span class="math">\(X_{\left(1\right)}^{n\times n}\)</span> and <span class="math">\(X_{\left(2\right)}^{n\times n}\)</span>. This
-matrices, all of the same size <span class="math">\(n\times n\)</span>, have the numbers from the
+<p>At first, we look at $x_{1j}$ and $x_{2j}$. We will rewrite them to matrices
+$X_{\left(1\right)}^{n\times n}$ and $X_{\left(2\right)}^{n\times n}$. This
+matrices, all of the same size $n\times n$, have the numbers from the
 representation above as diagonal entries. All other entries are '0'.</p>
-<div class="math">$$
-X_{\left(1\right)}^{n\times n} := 
+<p>$$
+X_{\left(1\right)}^{n\times n} :=
 \begin{pmatrix}
 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \cdots \\
 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \cdots \\
@@ -172,15 +222,15 @@ X_{\left(1\right)}^{n\times n} :=
 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \cdots \\
 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \cdots \\
 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; \cdots \\
-\vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \ddots 
+\vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \ddots
 \end{pmatrix}
-= \left(x_{\left(1\right),kj}\right)_{k=1,\dots,n \ , j=1,\dots, n} \  \delta_{kj}
-$$</div>
-<div class="math">$$
+= \left(x_{\left(1\right),kj}\right)_{k=1,\dots,n \ , j=1,\dots, n} \ \delta_{kj}
+$$</p>
+<p>$$
 X_{\left(2\right)}^{n\times n} :=
 \begin{pmatrix}
 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \cdots \\
-0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \cdots  \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \cdots \\
 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \cdots \\
 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \cdots \\
 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \cdots \\
@@ -189,97 +239,42 @@ X_{\left(2\right)}^{n\times n} :=
 \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \ddots
 \end{pmatrix}
 = \left(x_{\left(2\right),kj}\right)_{k=1,\dots,n \ , j=1,\dots, n} \  \delta_{kj}
-$$</div>
+$$</p>
 <p>Here are
-</p>
-<div class="math">$$
+$$
 x_{\left(i\right),kj} := \left\{
-    \begin{array}{l@{\quad \quad}l}
-    1 &amp; \mathrm{if} \ k = \left(2x_{i} + 1\right)x_{l} + x_{i} \\
-    0 &amp; \mathrm{else}
-    \end{array}
-    \right. 
-$$</div>
-<p>and </p>
-<div class="math">$$
+\begin{array}{l@{\quad \quad}l}
+1 &amp; \mathrm{if} \ k = \left(2x_{i} + 1\right)x_{l} + x_{i} \\
+0 &amp; \mathrm{else} \\
+\end{array}
+\right.
+$$</p>
+<p>and</p>
+<p>$$
 \delta_{kj} := \left\{
-    \begin{array}{l@{\quad \quad}l}
-    1 &amp; \mathrm{if} \ k = j \\
-    0 &amp; \mathrm{else}
-    \end{array}
-\right. 
-$$</div>
-<p>With this, we get <span class="math">\(\overline{X_{\left(i\right)}^{n\times n}}\)</span> by</p>
-<div class="math">$$
+\begin{array}{l@{\quad \quad}l}
+1 &amp; \mathrm{if} \ k = j \\
+0 &amp; \mathrm{else}
+\end{array}
+\right.
+$$</p>
+<p>With this, we get $\overline{X_{\left(i\right)}^{n\times n}}$ by</p>
+<p>$$
 \overline{X_{\left(i\right)}^{n\times n}} = \mathbb{1}_{n} - X_{\left(i\right)}^{n\times n}
-$$</div>
-<p>For an arbitrary number <span class="math">\(i=a,\dots,b\)</span>, <span class="math">\(a,b \in
-\mathbb{N}\)</span>, <span class="math">\(a \le b\)</span>, of equations <span class="math">\(x_{ij}\)</span> we receive</p>
-<div class="math">$$
+$$</p>
+<p>For an arbitrary number $i=a,\dots,b$, $a,b \in
+\mathbb{N}$, $a \le b$, of equations $x_{ij}$ we receive</p>
+<p>$$
 X_{\left(a,\dots,b\right)}^{n \times n} = \prod_{i=a}^{b} \left(\mathbb{1}_{n} -
 X_{\left(i\right)}^{n\times n}\right)
-$$</div>
+$$</p>
 <p>and so</p>
-<div class="math">$$
-x_{\left(a,\dots,b\right),kj} = \prod_{i=a}^{b} \left(1 - x_{\left(i\right),kj}\right)\delta_{kj} \\
-$$</div>
-<p>We received a matrix with '1' entries at the places <span class="math">\(j=k\)</span> which represent
-primes and else '0'.  </p>
-<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
+<p>$$
+x_{\left(a,\dots,b\right),kj} = \prod_{i=a}^{b} \left(1 - x_{\left(i\right),kj}\right)\delta_{kj} \
+$$</p>
+<p>We received a matrix with '1' entries at the places $j=k$ which represent
+primes and else '0'.</p>
 
-    if (false) {
-        align = (screen.width < 768) ? "left" : align;
-        indent = (screen.width < 768) ? "0em" : indent;
-        linebreak = (screen.width < 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-</script>
 
 
         

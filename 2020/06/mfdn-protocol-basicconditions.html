@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en_us">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,7 +36,7 @@
         <meta name="twitter:site" content="@SamdneyTweet" />
         <meta name="twitter:creator" content="@SamdneyTweet" />
         <meta name="twitter:title" content="Basic conditions for a mathematical forced decentralized network protocol (MfDN-Protocol)" />
-        <meta name="twitter:description" content="<p>A mathematical forced decentralized network protocol needs a set of basic conditions which has to be considered. To get more clear about it, we discuss the differences of this concept regarding to classical decentralized systems and give a first starting point for further design steps.</p>" />
+        <meta name="twitter:description" content="A mathematical forced decentralized network protocol needs a set of basic conditions which has to be considered. To get more clear about it, we discuss the differences of this concept regarding to classical decentralized systems and give a first starting point for further design steps." />
         <meta name="twitter:image" content="https://blog.carolin-zoebelein.de/images/twittercard.jpg" />
 
         <!-- RSS Feeds -->
@@ -49,6 +49,57 @@
         <![endif]-->
 
 
+
+		<!-- MathJaX -->
+
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			config: ['MMLorHTML.js'],
+			loader: {
+				load: ['input/tex-base', '[tex]/ams', 'output/svg', 'ui/menu', '[tex]/require']
+			},
+			TeX: {
+				packages: ['base', 'require', 'ams'],
+				extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'],
+				equationNumbers: { autoNumber: 'AMS' }
+			},
+			//packages: ['base', 'require', 'ams'],
+			//extensions: ['tex2jax.js', 'AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'],
+			//equationNumbers: { autoNumber: 'AMS' },
+			tags: 'ams',
+    		tagSide: 'right',
+			jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+			//extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js'],
+			extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js'],
+			//displayAlign: 'align',
+			//displayIndent: 'indent',
+			showMathMenu: true,
+			messageStyle: 'normal',
+			tex2jax: {
+				inlineMath: [ ['$','$'], ['\\\\(','\\\\)'] ],
+				displayMath: [ ['$$','$$'] ],
+				processEscapes: true
+				,
+				preview: 'TeX'
+			},
+			//tex: {
+			//	processEscapes: false
+			//}
+			'HTML-CSS': {
+				styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'}},
+				linebreaks: { automatic: "linebreak", width: '90% container' },
+			}
+		});
+	</script>
+	
+	<script type="text/javascript">
+  	MathJax.Hub.Configured()
+	</script>
+
+
+	<script type="text/javascript"
+	   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js">
+	</script>
 
     </head>
 
@@ -101,7 +152,7 @@
               <div class="col-lg-12">
                   <div class="header-content">
                       <h1 class="header-title">Basic conditions for a mathematical forced decentralized network protocol (MfDN-Protocol)</h1>
-                      <p class="header-date">By <a href="/author/carolin-zobelein.html">Carolin Zöbelein</a>, Sun, 07 Jun 2020, in category <a href="/category/decentralization.html">Decentralization</a></p>
+                      <p class="header-date">By <a href="/author/carolin-zobelein.html">Carolin Zöbelein</a>, Sun 07 June 2020, in category <a href="/category/decentralization.html">Decentralization</a></p>
                       <div class="header-underline"></div>
                       <div class="clearfix"></div>
                       <p class="pull-right header-tags">
@@ -123,7 +174,7 @@
     <div class="container content">
 
 	<h1 class="entry-title"><a href="/2020/06/mfdn-protocol-basicconditions.html">Basic conditions for a mathematical forced decentralized network protocol (MfDN-Protocol)</a></h1>
-        <p><font size="2.3em"><i>Sun, 07 Jun 2020 by Carolin Zöbelein<br />
+        <p><font size="2.3em"><i>Sun 07 June 2020 by Carolin Zöbelein<br />
         Category: Decentralization<br />
 
 	Tags: <a href="/tag/combsee.html">Combsee</a>, <a href="/tag/decentralization.html">decentralization</a>, <a href="/tag/mathematical.html">mathematical</a>, <a href="/tag/mfdn-protocol.html">MfDN-Protocol</a>, <a href="/tag/networks.html">networks</a>, <a href="/tag/privacy.html">privacy</a>, <a href="/tag/protocol.html">protocol</a>	
@@ -177,7 +228,7 @@
 <ol>
 <li>Defining the minimum amount of design contraints which a service has to fulfill</li>
 <li>How to take care of avoiding a 'fake' decentralization by e.g. running several virtual machines on the same centralized server?</li>
-<li>Best way of handling and coordinating network members, synchronization, concurrency control, ....    </li>
+<li>Best way of handling and coordinating network members, synchronization, concurrency control, ....</li>
 <li>Best way of handling recovery problems because of user errors, application errors or partial system failures</li>
 <li>The given hardware and infrastrucutre have to be able to handle the amount of traffic, synchronization, ....</li>
 </ol>
@@ -193,6 +244,7 @@
 <p>After having a look at the basic conditions for our mathematicial forced decentralized protocol, we want to put this in a more clear design in the next notes. There we will discuss the basic protocol design and the deeper parts with the mathematical aspects of our work.</p>
 <h2>Acknowledgement</h2>
 <p>Special thanks to the individual donators for supporting this work.</p>
+
 
 
         
